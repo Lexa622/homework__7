@@ -4,10 +4,9 @@ def custom_write(file_name, strings):   # file_name - название файл�
     for string in strings:
         i += 1
         file = open(file_name, 'a', encoding='utf-8')
-        a = file.tell()
+        strings_positions[i, file.tell()] = string
         file.write(f"{string}\n")
         file.close()
-        strings_positions[i, a] = string
     return strings_positions
 
 
